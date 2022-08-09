@@ -202,63 +202,63 @@ http {
 <pre>
 <blockcode>
 server {
-		listen 80 default_server;
-		listen [::]:80 default_server ipv6only=on;
+    listen 80 default_server;
+    listen [::]:80 default_server ipv6only=on;
 
-		server_name  kxler.com www.kxler.com;
-		root /workspace/wordpress;
+    server_name  kxler.com www.kxler.com;
+    root /workspace/wordpress;
 
-		add_header X-Frame-Options "SAMEORIGIN";
-		add_header X-XSS-Protection "1; mode=block";
-		add_header X-Content-Type-Options "nosniff";
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options "nosniff";
 
-		index index.html index.htm index.php;
+    index index.html index.htm index.php;
 
-		charset utf-8;
+    charset utf-8;
 
-		fastcgi_connect_timeout 300;
-		fastcgi_read_timeout 300;
-		fastcgi_send_timeout 300;
+    fastcgi_connect_timeout 300;
+    fastcgi_read_timeout 300;
+    fastcgi_send_timeout 300;
 
-		location = /favicon.ico { access_log off; log_not_found off; }
-		location = /robots.txt  { access_log off; log_not_found off; }
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
 
-		error_page 404 /index.php;
+    error_page 404 /index.php;
 
-		location / {
-			proxy_connect_timeout      90;
-			proxy_send_timeout         90;
-			proxy_read_timeout         90;
+    location / {
+        proxy_connect_timeout      90;
+        proxy_send_timeout         90;
+        proxy_read_timeout         90;
 
-			try_files $uri $uri/ /index.php?$query_string;
-		}
+        try_files $uri $uri/ /index.php?$query_string;
+    }
 
-		location ~ \.php$ {
-		    # 取决于配置文件/etc/php/7.4/fpm/pool.d/www.conf中listen是unix socket还是tcp
-			# fastcgi_pass   127.0.0.1:9000;
-			fastcgi_pass   unix:/run/php/php7.4-fpm.sock;
-			fastcgi_index  index.php;
-			fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-			include        fastcgi_params;
-		}
+    location ~ \.php$ {
+        # 取决于配置文件/etc/php/7.4/fpm/pool.d/www.conf中listen是unix socket还是tcp
+        # fastcgi_pass   127.0.0.1:9000;
+        fastcgi_pass   unix:/run/php/php7.4-fpm.sock;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
 
-		location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|mp3|mp4|ico|woff|woff2|ttf)$ {
-		 	expires      30d;
-		  	log_not_found off;
-			access_log off;
-		 }
+    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|mp3|mp4|ico|woff|woff2|ttf)$ {
+        expires      30d;
+        log_not_found off;
+        access_log off;
+        }
 
-		location ~ .*\.(js|css)?$ {
-			expires      12h;
-			access_log off;
-		}
+    location ~ .*\.(js|css)?$ {
+        expires      12h;
+        access_log off;
+    }
 
-		location ~ /\.(?!well-known).* {
-			deny all;
-		}
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
 
-		access_log  /var/log/nginx/access_wordpress-blog.log;
-		error_log  /var/log/nginx/error_wordpress-blog.log error;
+    access_log  /var/log/nginx/access_wordpress-blog.log;
+    error_log  /var/log/nginx/error_wordpress-blog.log error;
 }
 </blockcode>
 </pre>
