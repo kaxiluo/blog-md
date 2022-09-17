@@ -1,19 +1,20 @@
- 一开始我是想在Markdown中展示文件夹的树状格式，发现可以用tree命令输出文件树。Windows支持tree命令，然而自带的tree命令不支持排除指定目录等高级的功能，这时候就需要安装一个加强版的`Tree for Windows`，它提供了丰富的参数。
+ 如果我们想在Markdown中展示文件夹的树状格式，可以使用Windows自带的tree命令输出文件树，然而自带的tree命令不支持排除指定目录等高级功能。这时候就需要安装一个加强版的tree命令 - `Tree for Windows`，它提供了排除目录、排序规则等丰富的参数。
  
 ## 先来看看Windows自带的tree命令用法
 
-```shell
+```bash
 # 查看使用说明
 PS C:\Users\Administrator> tree /?
 
 TREE [drive:][path] [/F] [/A]
    /F   显示每个文件夹中文件的名称。
    /A   使用 ASCII 字符，而不使用扩展字符。
-```   
+```
+自带的tree命令十分简单，显然不能满足我们排除目录的需求，此时我们就需要安装强化版的tree命令。
 
-## 安装强化的`Tree`命令 - Tree for Windows
+## 使用强化版的Tree命令 - Tree for Windows
 
-只需要下载一个可执行文件，就可以使用强化的tree命令了。
+### 下载安装
 
 1. 进入[Tree for Windows](http://gnuwin32.sourceforge.net/packages/tree.htm)
 
@@ -21,12 +22,11 @@ TREE [drive:][path] [/F] [/A]
 
 3. 解压，找到bin目录下的可执行文件 `tree.exe`，复制到任意目录（我常常将它们放在`C:\bin`）
 
-## 强化版Tree命令的用法
+### 强化版Tree命令的使用说明
 
-在`tree.exe`所在的目录执行命令
-```shell
-# 查看使用说明
-PS C:\bin> ./tree.exe --help
+```bash
+# 在tree.exe所在目录执行查看使用说明的命令
+> ./tree.exe --help
 usage: tree [-adfghilnpqrstuvxACDFNS] [-H baseHREF] [-T title ] [-L level [-R]]
         [-P pattern] [-I pattern] [-o filename] [--version] [--help] [--inodes]
         [--device] [--noreport] [--nolinks] [--dirsfirst] [--charset charset]
@@ -35,7 +35,7 @@ usage: tree [-adfghilnpqrstuvxACDFNS] [-H baseHREF] [-T title ] [-L level [-R]]
   -d            List directories only.
   -l            Follow symbolic links like directories.
   -f            Print the full path prefix for each file.
-  -i            Don't print indentation lines.
+  -i            Don\'t print indentation lines.
   -q            Print non-printable characters as '?'.
   -N            Print non-printable characters as is.
   -p            Print the protections for each file.
@@ -69,16 +69,16 @@ usage: tree [-adfghilnpqrstuvxACDFNS] [-H baseHREF] [-T title ] [-L level [-R]]
   --filelimit # Do not descend dirs with more than # files in them.
 ```
 
-## 使用例子
+### 使用例子
 
+查看目录`E:\testdir`下的文件树，排除目录`cachedir`，输出排序规则以目录优先。
 ```bash
-# 查看E:\testdir目录下的文件树，排除目录cachedir，输出排序以目录优先
 > ./tree.exe E:\testdir\ -I cachedir  --dirsfirst
 E:\testdir\
 |-- app
 |   |-- code
 |   |   `-- test.txt
-|   |-- empty
+|   |-- emptydir
 |   `-- index.txt
 |-- bar
 |   `-- 233.txt
