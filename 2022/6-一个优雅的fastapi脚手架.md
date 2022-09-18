@@ -1,6 +1,6 @@
 这是一个开箱即用的FastAPI脚手架，集成了ORM模型、JWT认证、日志系统、异常处理、路由注册、系统配置、调度任务等常用的模块。
 
-> FastAPI是一个用于构建API的现代、高性能的Python web框架，由于它只提供app核心，因此需要我们自己组织项目结构，通常得编写一些Web API项目必备的功能模块。对此，我在github上搜索相关的最佳实践，然而没有找到心仪的脚手架，所以决定封装一个FastAPI骨架项目。
+FastAPI是一个用于构建API的现代、高性能的Python web框架，由于它只提供app核心，因此需要我们自己组织项目结构，通常得编写一些Web API项目必备的功能模块。对此，我在github上搜索相关的最佳实践，然而没有找到心仪的脚手架，所以决定封装一个FastAPI骨架项目。
 
 ## 设计思想
 
@@ -13,7 +13,7 @@
 
 源码GitHub地址 -> [kaxiluo/fastapi-skeleton](https://github.com/kaxiluo/fastapi-skeleton)
 
-```
+```python
 /kaxiluo/fastapi-skeleton/
 |-- app
 |   |-- commands                                ----- 放置一些命令行
