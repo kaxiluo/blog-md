@@ -1,7 +1,11 @@
 # blog-md
-kxl's blog markdown
 
-**Blog at [www.kxler.com](https://www.kxler.com/)**
+**[www.kxler.com](https://www.kxler.com/)**
+
+
+https://www.kxler.com/2022/09/28/dmn-js-vue-practical-cases/
+
+https://www.kxler.com/2022/09/19/fastapi-skeleton/
 
 https://www.kxler.com/2022/09/17/windows-tree-cmd-support-parameters-such-as-excluding-directories/
 
