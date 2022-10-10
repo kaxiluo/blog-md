@@ -128,9 +128,9 @@ FastAPI是一个用于构建API的现代、高性能的Python web框架，由于
 
 1. 执行初始化SQL：`/database/migrations/2022_09_07_create_users_table.sql`
 
-2. 启动API：`./main.py`
+2. API App：`main.py`
 
-3. 启动调度器： `./scheduler.py`
+3. 调度器：`scheduler.py`
 
 ## 参考
 

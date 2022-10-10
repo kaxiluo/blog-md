@@ -107,7 +107,7 @@ dpkg -i mysql-common_5.7.39-1debian10_amd64.deb \
 # 启动 nginx php-fpm mysql
 service nginx start
 service php7.4-fpm start
-service start mysql
+service mysql start
 # 使用 ps aux 查看进程是都启动
 ```
 
