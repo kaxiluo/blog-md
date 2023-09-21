@@ -3,7 +3,7 @@
 ## 安装 vue-clamp
 
 ```bash
- npm i --save vue-clamp
+npm i --save vue-clamp
 ```
 
 ## 封装组件，方便在 Element-UI Table 中使用
@@ -54,6 +54,10 @@ export default {
 </el-table>
 ```
 
+## 在线体验
+
+[**CodePen在线体验**](https://codepen.io/kaxiluo/pen/BavJRax)
+
 ## 关于 vue-clamp
 
 可以选择限制行数与/或最大高度，无需指定行高。
@@ -66,4 +70,4 @@ export default {
 
 支持在文本末尾、中间或开始位置进行截断
 
-[**vue-clamp官网体验**](https://vue-clamp.vercel.app/?lang=zh)
+[**vue-clamp官网**](https://vue-clamp.vercel.app/?lang=zh)
