@@ -58,6 +58,14 @@ export default {
 
 [**CodePen在线体验**](https://codepen.io/kaxiluo/pen/BavJRax)
 
+## Table设置固定列后，固定列错位
+
+由于El-Tbale固定列的实现是复制一份table，再隐藏其他列。VClamp组件的展开没能触发另一个Table视图更新，导致了固定列错位，高度未自动计算。
+
+**更改数据来驱动视图更新，以解决该问题**
+
+具体方法 -> [**ElementUI Table VueClamp Fixed**](https://codepen.io/kaxiluo/pen/eYbMdKK)
+
 ## 关于 vue-clamp
 
 可以选择限制行数与/或最大高度，无需指定行高。
